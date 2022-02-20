@@ -1,7 +1,7 @@
 const axios = require("axios");
 // import axios from 'axios' // es6
 
-async function getData({ address }) {
+async function getRewards({ address }) {
   try {
     const response = await axios.request({
       method: "get",
@@ -30,7 +30,7 @@ async function getData({ address }) {
 export default async function handler(req, res) {
   const { address } = req.query;
 
-  const data = await getData({ address });
+  const data = await getRewards({ address });
   console.log(req.query);
   res.status(200).json(data);
 }
