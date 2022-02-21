@@ -1,5 +1,4 @@
 const axios = require("axios");
-// import axios from 'axios' // es6
 
 async function getRewards({ address }) {
   try {
