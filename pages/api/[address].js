@@ -8,8 +8,7 @@ async function getRewards({ address }) {
       url: "https://vmtest.adaseal.eu/api.php",
       params: {
         action: "get_reward_breakdown",
-        token:
-          "58f4f1d3e8f8a5c1f9d1de211fc4e1804342281136d1a18babfce52f621d0072",
+        token: process.env.TOKEN,
         staking_address: address,
       },
     });
