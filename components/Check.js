@@ -21,13 +21,9 @@ const Check = () => {
     setLoading(true);
 
     await sleep(1000);
-    
-    if (!/addr1[a-z0-9]{98}/i.test(address)) {
-      return res.status(422).json({ error: "Not a valid Shelley address" });
-    }
 
     try {
-      const response = await axios.request({
+      const res = await axios.request({
         method: "get",
         url: "http://localhost:3000/api/" + address,
       })
@@ -35,11 +31,12 @@ const Check = () => {
       setAddress("");
       setStep("submitted");
 
-      console.log("result: ", response.data);
+      console.log("result: ", res.data);
+
     } catch (e) {
       setStep("error");
-      if (e.response && e.response.data && e.response.data.error) {
-        setError(e.response.data.error);
+      if (e.res && e.res.data && e.res.data.error) {
+        setError(e.res.data.error);
       } else {
         setError("Unknown error");
       }
@@ -58,7 +55,6 @@ const Check = () => {
               Enter wallet or staking address
               <p className="text-green-400 text-center mb-4 mt-4 h-2">{address}</p>
             </label>
-            
             <input
               value={address}
               onChange={e => setAddress(e.target.value)}
