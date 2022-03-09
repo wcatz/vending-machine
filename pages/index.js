@@ -3,7 +3,6 @@ import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 import Check from "../components/Check"
-import Avalailable from "../components/Available"
 
 
 export default function Home() {
@@ -43,7 +42,6 @@ export default function Home() {
             <Check />
           </div>
           <div className="w-full xl:w-3/5 p-12 overflow-hidden">
-            <Avalailable />
           </div>
           <div className="mx-auto md:pt-16">
             <p className="text-blue-400 font-bold pb-8 lg:pb-6 text-center">
