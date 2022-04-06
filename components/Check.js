@@ -1,7 +1,7 @@
 const axios = require("axios");
 import { useState } from "react"
 
-// test
+
 const Check = () => {
   const [address, setAddress] = useState("");
   const [loading, setLoading] = useState(false);
